@@ -39,6 +39,9 @@ wifiinformation.getSampleInfo( onSuccess, onError );
 ### Demo App:
 `git clone https://github.com/Riyaz0001/cordova-plugin-wifi-info-ionic4-demo.git`
 
+
+
+
 ## License
 
 The MIT License (MIT)
