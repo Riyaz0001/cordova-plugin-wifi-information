@@ -4,11 +4,13 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.PermissionHelper;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.Manifest;
 import android.content.Context;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiInfo;
@@ -44,28 +46,27 @@ import org.apache.commons.lang3.*;
 
 public class wifiinformation extends CordovaPlugin {
 	public static final String GET_SAMPLE_WIFI_INFO = "getSampleInfo";
-	// public static final String GET_CARRIER_IP_ADDRESS = "getCarrierIPAddress";
-    // public static final String GET_HTTP_PROXY_INFORMATION = "getHttpProxyInformation";
     public static final String GET_WIFI_INFORMATION = "getWifiInfo";
     public static final String GET_ACTIVE_DEVICES = "getActiveDevices";
     public static final String GET_DHCP_INFO = "getDHCPInfo";
-	// private static final String TAG = "cordova-plugin-networkinterface";
 
 	
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        boolean permissionGranted = PermissionHelper.hasPermission(this, Manifest.permission.ACCESS_WIFI_STATE);
+        boolean permissionGranted2 = PermissionHelper.hasPermission(this, Manifest.permission.ACCESS_NETWORK_STATE);
+        
+       // Stop always requesting the permission
+       if(!permissionGranted && permissionGranted2) {
+           // PermissionHelper.requestPermission(this, 2, Manifest.permission.ACCESS_WIFI_STATE);
+           PermissionHelper.requestPermissions(this, 2, new String[]{Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.ACCESS_NETWORK_STATE});
+       }
+
 		try {
 			if (GET_SAMPLE_WIFI_INFO.equals(action)) {
-				return getSampleInfo(callbackContext);
-            
-            //} 
-            //else if (GET_CARRIER_IP_ADDRESS.equals(action)) {
-			// 	return extractIpInfo(getCarrierIPAddress(), callbackContext);
-            
-            // } else if(GET_HTTP_PROXY_INFORMATION.equals(action)) {
-			// 	return getHttpProxyInformation(args.getString(0), callbackContext);
-            
+                return getSampleInfo(callbackContext);
+                
             } else if(GET_WIFI_INFORMATION.equals(action)) {
 				return getWifiInformation(callbackContext);
             
