@@ -36,7 +36,7 @@ function onError( error ) {
 wifiinformation.getSampleInfo( onSuccess, onError );
 ```
 
-### Demo App for IONIC 4 App:
+### Demo App for Ionic v4:
 `git clone https://github.com/Riyaz0001/cordova-plugin-wifi-info-ionic4-demo.git`
 
 
