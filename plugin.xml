@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-wifi-info"
+    version="1.0.0">
+
+    <name>Wi-Fi Information</name>
+    <description>
+    	Cordova Wi-Fi Info Plugin.
+	</description>
+
+    <license>MIT</license>
+
+    <keywords>local,ip,wifi,network,proxy</keywords>
+
+	<engines>
+		<engine name="cordova" version=">=3.1.0" />
+	</engines>
+
+    <js-module src="www/wifiinformation.js" name="wifiinformation">
+    	<clobbers target="window.wifiinformation" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="wifiinformation">
+                <param name="android-package" value="com.mrustudio.plugin.wifiinformation.wifiinformation"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+
+        <source-file src="src/android/wifiinformation.java" target-dir="src/com/mrustudio/plugin/wifiinformation" />
+        <framework src="org.apache.commons:commons-lang3:3.+"/>
+    </platform>
+
+</plugin>

@@ -1,0 +1,22 @@
+{
+  "homepage": "https://github.com/Riyaz0001/cordova-plugin-wifi-info",
+  "keywords": [
+    "local",
+    "ip",
+    "wifi",
+    "network",
+    "proxy",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "cordova-browser",
+    "cordova-windows"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-wifi-info",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Riyaz0001/cordova-plugin-wifi-info.git"
+  },
+  "version": "1.0.0"
+}
