@@ -27,7 +27,7 @@ function getPermission() {
     return new Promise<any>((resolve, reject) => {
       if (this.network.type === 'wifi' || this.network.type === 'WIFI') {
         // view router info
-        wifiinformation.getPermission((success) => {
+        window.wifiinformation.getPermission((success) => {
           resolve([success]);
         }, (err) => { reject(err); });
       } else {
