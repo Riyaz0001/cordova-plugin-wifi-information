@@ -11,6 +11,7 @@ Wi-Fi Information plugin for Cordova that supports Android.
 
 The plugin creates the global object `wifiinformation`, with the following methods:
 
+* getPermission() - Check Premission Granted or Not
 * getSampleInfo(onSuccess, onError)  - Sampley get wifi ip, ssid, mac, or gateway.
 * getWifiInfo(onSuccess, onError) - Full wifi information, like: LINK_SPEED_UNITS, FREQUENCY_UNITS, received signal strength (RSSI).
 * getActiveDevices(onSuccess, onError) - Get All Active Device List, include: ip, host name.
@@ -20,6 +21,22 @@ The plugin creates the global object `wifiinformation`, with the following metho
 The onSuccess() callback has one argument object with the properties `IP, SSID, MAC` and `Gateway`. The onError() callback is provided with a single value describing the error.
 
 ```javascript
+// at first check & request premission.
+function getPermission() {
+    // return Promise
+    return new Promise<any>((resolve, reject) => {
+      if (this.network.type === 'wifi' || this.network.type === 'WIFI') {
+        // view router info
+        wifiinformation.getPermission((success) => {
+          resolve([success]);
+        }, (err) => { reject(err); });
+      } else {
+        reject('No Wi-Fi Connected.');
+      }
+    });
+  }
+  
+  
 function onSuccess( wifiInfo ) {
     alert( "IP: " + wifiInfo.ip + 
            "\nSSID:" + wifiInfo.ssid + 
