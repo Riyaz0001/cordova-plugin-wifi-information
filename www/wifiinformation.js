@@ -17,4 +17,8 @@ wifiinformation.getSampleInfo = function(success, fail ) {
     cordova.exec( success, fail, "wifiinformation", "getSampleInfo", [] );
 };
 
+wifiinformation.getPermission = function(success, fail ) {
+  cordova.exec( success, fail, "wifiinformation", "getPermission", [] );
+};
+
 module.exports = wifiinformation;
