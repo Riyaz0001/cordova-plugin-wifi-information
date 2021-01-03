@@ -21,4 +21,12 @@ wifiinformation.getPermission = function(success, fail ) {
   cordova.exec( success, fail, "wifiinformation", "getPermission", [] );
 };
 
+wifiinformation.checkPermission = function(success, fail ) {
+  cordova.exec( success, fail, "wifiinformation", "checkPermission", [] );
+};
+
+wifiinformation.getHostIp = function(success, fail ) {
+  cordova.exec( success, fail, "wifiinformation", "getHostIp", [] );
+};
+
 module.exports = wifiinformation;
