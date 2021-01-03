@@ -18,8 +18,8 @@ The plugin creates the global object `wifiinformation`, with the following metho
 * getDHCPInfo(onSuccess, onError) - Get WI-FI DHCP information.
 * getHostIp(onSuccess, onError) - Get Your Real IP address.
 
-### Using getSampleInfo
-The onSuccess() callback has one argument object with the properties `IP, SSID, MAC` and `Gateway`. The onError() callback is provided with a single value describing the error.
+### Using getWifiInfo
+The onSuccess() callback has one argument object with the properties `IP, SSID, MAC, Channel, Frequency` and `Gateway, DHCP Server IP`. The onError() callback is provided with a single value describing the error.
 
 ```javascript
 // Get your wifi router information.
@@ -69,11 +69,11 @@ function getWifiInfo() {
   }
   
   
-function onSuccess( wifiInfo ) {
-    alert( "IP: " + wifiInfo.ip + 
-           "\nSSID:" + wifiInfo.ssid + 
-           "\nMAC: " + wifiInfo.mac + 
-           "\nGateway: " + wifiInfo.gateway );
+function onSuccess( data ) {
+    alert( "IP: " + data.wifi_info.ip + 
+           "\nSSID:" + data.wifi_info.ssid + 
+           "\nMAC: " + data.wifi_dhcp.mac + 
+           "\nGateway: " + data.wifi_dhcp.gateway );
 }
 
 function onError( error ) {
@@ -82,10 +82,11 @@ function onError( error ) {
     alert( error );
 }
 
-wifiinformation.getSampleInfo( onSuccess, onError );
+// Get Wi-Fi Info.
+wifiinformation.getWifiInfo( onSuccess, onError );
 
 // Get Host IP address
- wifiinformation.getHostIp(
+wifiinformation.getHostIp(
     function(data) => {
       console.log(data);
     },
