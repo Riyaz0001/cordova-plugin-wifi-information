@@ -16,6 +16,7 @@ The plugin creates the global object `wifiinformation`, with the following metho
 * getWifiInfo(onSuccess, onError) - Full wifi information, like: LINK_SPEED_UNITS, FREQUENCY_UNITS, received signal strength (RSSI).
 * getActiveDevices(onSuccess, onError) - Get All Active Device List, include: ip, host name.
 * getDHCPInfo(onSuccess, onError) - Get WI-FI DHCP information.
+* getHostIp(onSuccess, onError) - Get Your Real IP address.
 
 ### Using getSampleInfo
 The onSuccess() callback has one argument object with the properties `IP, SSID, MAC` and `Gateway`. The onError() callback is provided with a single value describing the error.
@@ -51,6 +52,16 @@ function onError( error ) {
 }
 
 wifiinformation.getSampleInfo( onSuccess, onError );
+
+// Get Host IP address
+ wifiinformation.getHostIp(
+    function(data) => {
+      console.log(data);
+    },
+    function(err) => {
+      console.error(err);
+    }
+ );
 ```
 
 ### Demo App for Ionic v4:
