@@ -1,7 +1,7 @@
 Wi-Fi Information
 =================
 
-Wi-Fi Information plugin for Cordova that supports Android.
+Wi-Fi Information plugin for Cordova Android supports.
 
 ## Command Line Install
 
