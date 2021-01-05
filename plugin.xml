@@ -12,7 +12,7 @@
 
     <license>MIT</license>
 
-    <keywords>local,ip,wifi,network,proxy</keywords>
+    <keywords>local,ip,wifi,network,proxy,ssid,mac,channel</keywords>
 
 	<engines>
 		<engine name="cordova" version=">=3.1.0" />
