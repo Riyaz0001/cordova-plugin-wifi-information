@@ -5,7 +5,7 @@ Wi-Fi Information plugin for Cordova Android supports.
 
 ## Command Line Install
 
-    cordova plugin add https://github.com/Riyaz0001/cordova-plugin-wifi-info.git
+    cordova plugin add https://github.com/Riyaz0001/cordova-plugin-wifi-information.git
 
 ## Global Usage
 
