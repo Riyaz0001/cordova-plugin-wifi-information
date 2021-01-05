@@ -3,11 +3,11 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-wifi-info"
-    version="1.0.0">
+    version="1.1.0">
 
     <name>Wi-Fi Information</name>
     <description>
-    	Cordova Wi-Fi Info Plugin.
+    	Cordova Wi-Fi Information Plugin.
 	</description>
 
     <license>MIT</license>
