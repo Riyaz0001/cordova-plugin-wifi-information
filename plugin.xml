@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-wifi-info"
+    id="cordova-plugin-wifi-information"
     version="1.1.0">
 
     <name>Wi-Fi Information</name>
@@ -40,7 +40,7 @@
         </config-file>
 
         <source-file src="src/android/wifiinformation.java" target-dir="src/com/mrustudio/plugin/wifiinformation" />
-        <framework src="org.apache.commons:commons-lang3:3.+"/>
+        <framework src="org.apache.commons:commons-lang3:3.11"/>
         <framework src="com.android.volley:volley:1.1.1"/>
     </platform>
 
