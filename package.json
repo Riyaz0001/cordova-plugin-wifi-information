@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/Riyaz0001/cordova-plugin-wifi-info",
+  "homepage": "https://github.com/Riyaz0001/cordova-plugin-wifi-information",
   "keywords": [
     "local",
     "ip",
@@ -16,7 +16,7 @@
   "name": "cordova-plugin-wifi-information",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Riyaz0001/cordova-plugin-wifi-info.git"
+    "url": "git+https://github.com/Riyaz0001/cordova-plugin-wifi-information.git"
   },
   "version": "1.1.0"
 }
